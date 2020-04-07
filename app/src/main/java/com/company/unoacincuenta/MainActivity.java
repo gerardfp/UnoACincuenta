@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < 25; i++) {
+
+            botones[i].setVisibility(View.VISIBLE);
+
             while(true) {
                 int num = random.nextInt(25);
 
@@ -79,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 cronometroJuego.stop();
 
                 new AlertDialog.Builder(this)
-                        .setTitle("COMPLETADO!")
+                        .setTitle("¡COMPLETADO!")
                         .setMessage("Tiempo: " + cronometroJuego.getContentDescription())
-                        .setPositiveButton("Juegar de nuevo", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Jugar de nuevo", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 iniciarJuego();
@@ -89,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
                         })
                         .create()
                         .show();
+
             } else if(actual <= 25){
+
                 while(true) {
                     int num = random.nextInt(50);
 
@@ -100,8 +105,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
+
             } else {
+
                 boton.setVisibility(View.INVISIBLE);
+
             }
 
             actual++;
